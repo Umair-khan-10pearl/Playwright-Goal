@@ -1,0 +1,32 @@
+{
+    "Login": {
+        "email": "//input[@data-qa='login-email']",
+        "password": "//input[@data-qa='login-password']",
+        "loginButton": "//button[@data-qa='login-button']"
+    },
+
+    "Signup": {
+        "name": "//input[@data-qa='signup-name']",
+        "email": "//input[@data-qa='signup-email']",
+        "signupButton": "//button[@data-qa='signup-button']",
+        "genderMr": "//input[@id='id_gender1']",
+        "genderMrs": "//input[@id='id_gender2']",
+        "nameForm": "//input[@data-qa='name']",
+        "emailForm": "//input[@data-qa='email']",
+        "password": "//input[@data-qa='password']",
+        "days": "//select[@data-qa='days']",
+        "months": "//select[@data-qa='months']",
+        "years": "//select[@data-qa='years']",
+        "firstName": "//input[@data-qa='first_name']",
+        "lastName": "//input[@data-qa='last_name']",
+        "address": "//input[@data-qa='address']",
+        "city": "//input[@data-qa='city']",
+        "state": "//input[@data-qa='state']",
+        "zipcode": "//input[@data-qa='zipcode']",
+        "country": "//select[@data-qa='country']",
+        "mobileNumber": "//input[@data-qa='mobile_number']",
+        "createAccountButton": "//button[@data-qa='create-account']",
+        "continueToHomeButton": "//a[@data-qa='continue-button']"
+    }
+
+}
