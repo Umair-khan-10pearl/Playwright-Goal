@@ -27,6 +27,25 @@
         "mobileNumber": "mobile_number",
         "createAccountButton": "create-account",
         "continueToHomeButton": "continue-button"
+    },
+
+    "Products": {
+        "searchInputPlaceholder": "Search Product",
+        "searchButton": "#submit_search",
+        "productCard": ".product-image-wrapper",
+        "addToCartText": "Add to cart",
+        "noProductsMessagePattern": "no products found|not found",
+        "viewCartLinkText": "View Cart",
+        "continueShoppingText": "Continue Shopping"
+    },
+
+    "Cart": {
+        "cartTable": "#cart_info_table",
+        "quantityButton": ".cart_quantity button",
+        "priceText": ".cart_price p",
+        "deleteIcon": ".cart_quantity_delete",
+        "emptyCartMessageText": "Cart is empty!",
+        "proceedToCheckoutText": "Proceed To Checkout"
     }
 
 }
