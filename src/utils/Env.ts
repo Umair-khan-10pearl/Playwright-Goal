@@ -14,5 +14,7 @@ function required(name: string): string {
 
 export const ENV = {
   baseURL: required('BASE_URL'),
-  apiBaseURL: required('API_BASE_URL')
+  apiBaseURL: required('API_BASE_URL'),
+  username: required('TEST_USERNAME'),
+  password: required('TEST_PASSWORD')
 };

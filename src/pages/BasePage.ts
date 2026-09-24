@@ -27,51 +27,48 @@ export abstract class BasePage {
 
   // ------------------- Common element interactions -----------------------
 
-  async click(locator: any){
-    const element = await this.page.waitForSelector(locator, {state: 'visible',});
-    await element.click();
+  async click(locator: Locator){
+    await locator.waitFor({state: 'visible',});
+    await locator.click();
   }
 
-  async fill(locator: any,value: string,){
-    const element = await this.page.waitForSelector(locator, {state: 'visible',});
-    await element.fill(value);
+  async fill(locator: Locator,value: string,){
+    await locator.waitFor({state: 'visible',});
+    await locator.fill(value);
   }
 
-  async getText(locator: any){
-    const element = await this.page.waitForSelector(locator, {state: 'visible',});
-    return (await element.innerText()).trim();
+  async getText(locator: Locator){
+    await locator.waitFor({state: 'visible',});
+    return (await locator.innerText()).trim();
   }
 
-  async isVisible(locator: any){
-    const element = await this.page.waitForSelector(locator, {state: 'visible',});
-    return element.isVisible();
+  async isVisible(locator: Locator){
+    return locator.isVisible();
   }
 
-  async isEnabled(locator: any){
-    const element = await this.page.waitForSelector(locator, {state: 'visible',});
-    return element.isEnabled();
+  async isEnabled(locator: Locator){
+    return locator.isEnabled();
   }
 
-  async isChecked(locator: any){
-    const element = await this.page.waitForSelector(locator, {state: 'visible',});
-    return element.isChecked();
+  async isChecked(locator: Locator){
+    return locator.isChecked();
   }
 
   // ------------------- Form controls -----------------------
 
-  async check(locator: any){
-    const element = await this.page.waitForSelector(locator, {state: 'visible',});
-    await element.check();
+  async check(locator: Locator){
+    await locator.waitFor({state: 'visible',});
+    await locator.check();
   }
 
-  async uncheck(locator: any){
-    const element = await this.page.waitForSelector(locator, {state: 'visible',});
-    await element.uncheck();
+  async uncheck(locator: Locator){
+    await locator.waitFor({state: 'visible',});
+    await locator.uncheck();
   }
 
-  async selectOption(locator: any,value: string,){
-    const element = await this.page.waitForSelector(locator, {state: 'visible',});
-    await element.selectOption(value);
+  async selectOption(locator: Locator,value: string,){
+    await locator.waitFor({state: 'visible',});
+    await locator.selectOption(value);
   }
 
   // Controlled self-healing

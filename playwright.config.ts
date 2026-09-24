@@ -23,6 +23,8 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     actionTimeout: 15_000,
+    // site's inputs/buttons expose data-qa, so getByTestId() can target them directly
+    testIdAttribute: 'data-qa',
   },
 
   projects: [

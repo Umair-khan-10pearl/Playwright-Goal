@@ -21,15 +21,15 @@ export class LoginPage extends BasePage {
     }
 
     async login(email: string, password: string): Promise<void> {
-        await this.fill(locators.Login.email,email);
-        await this.fill(locators.Login.password,password);
-        await this.click(locators.Login.loginButton);
+        await this.fill(this.page.getByTestId(locators.Login.email), email);
+        await this.fill(this.page.getByTestId(locators.Login.password), password);
+        await this.click(this.page.getByTestId(locators.Login.loginButton));
     }
 
     async startSignup(name: string, email: string): Promise<void> {
-        await this.fill(locators.Signup.name,name);
-        await this.fill(locators.Signup.email,email);
-        await this.click(locators.Signup.signupButton);
+        await this.fill(this.page.getByTestId(locators.Signup.name), name);
+        await this.fill(this.page.getByTestId(locators.Signup.email), email);
+        await this.click(this.page.getByTestId(locators.Signup.signupButton));
     }
 
     async isLoginErrorVisible(): Promise<boolean> {
