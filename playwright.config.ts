@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import { ENV } from './src/utils/Env';
+import { ENV } from './src/config/env';
 
 export default defineConfig({
   testDir: './tests',
@@ -18,7 +18,7 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: ENV.baseURL,
+    baseURL: ENV.BASE_URL,
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',

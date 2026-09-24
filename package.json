@@ -22,6 +22,7 @@
     "@types/node": "^26.6.2"
   },
   "dependencies": {
-    "dotenv": "^18.0.3"
+    "dotenv": "^18.0.3",
+    "winston": "^3.19.0"
   }
 }

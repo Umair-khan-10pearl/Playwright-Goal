@@ -1,5 +1,5 @@
 import { test, expect } from '../../src/fixtures/test-fixtures';
-import { ENV } from '../../src/utils/Env';
+import { ENV } from '../../src/config/env';
 import { buildRegisterUserPayload } from '../../src/utils/test-data';
 
 test.describe('Authentication - Login', () => {
@@ -28,13 +28,13 @@ test.describe('Authentication - Login', () => {
     // --------------------  NEGATIVE SCENARIOS --------------------
 
   test('@negative User cannot login with invalid username @negative @authentication', async ({ loginPage }) => {
-      await loginPage.login('invaliduser@gmail.com',ENV.password,);
+      await loginPage.login('invaliduser@gmail.com',ENV.PASSWORD,);
       expect(await loginPage.loginErrorMessage()).toBeVisible();
     },
   );
 
   test('@negative User cannot login with invalid password @negative @authentication', async ({ loginPage }) => {
-      await loginPage.login(ENV.username,'invalidpassword');
+      await loginPage.login(ENV.USERNAME,'invalidpassword');
       expect(await loginPage.loginErrorMessage()).toBeVisible();
     },
   );
