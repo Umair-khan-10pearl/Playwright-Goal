@@ -12,28 +12,8 @@ export class ProductsPage extends BasePage {
     super(page);
   }
 
-  private searchInput() {
-    return this.page.getByPlaceholder(locators.Products.searchInputPlaceholder);
-  }
-
-  private searchButton() {
-    return this.page.locator(locators.Products.searchButton);
-  }
-
-  private productCards() {
-    return this.page.locator(locators.Products.productCard);
-  }
-
   private noProductsMessage() {
     return this.page.getByText(new RegExp(locators.Products.noProductsMessagePattern, 'i'));
-  }
-
-  private viewCartModalLink() {
-    return this.page.getByRole('link', { name: locators.Products.viewCartLinkText });
-  }
-
-  private continueShoppingButton() {
-    return this.page.getByRole('button', { name: locators.Products.continueShoppingText });
   }
 
   async goto(): Promise<void> {
@@ -41,12 +21,12 @@ export class ProductsPage extends BasePage {
   }
 
   async search(term: string): Promise<void> {
-    await this.fill(this.searchInput(), term);
-    await this.click(this.searchButton());
+    await this.fill(this.page.getByPlaceholder(locators.Products.searchInputPlaceholder), term);
+    await this.click(this.page.locator(locators.Products.searchButton));
   }
 
   productCardByName(name: string) {
-    return this.productCards().filter({ hasText: name });
+    return this.page.locator(locators.Products.productCard).filter({ hasText: name });
   }
 
   async addToCartByName(name: string): Promise<void> {
@@ -55,7 +35,7 @@ export class ProductsPage extends BasePage {
   }
 
   async getResultCount(): Promise<number> {
-    return this.productCards().count();
+    return this.page.locator(locators.Products.productCard).count();
   }
 
   async hasNoProductsMessage(): Promise<boolean> {
@@ -63,10 +43,10 @@ export class ProductsPage extends BasePage {
   }
 
   async viewCartFromModal(): Promise<void> {
-    await this.click(this.viewCartModalLink());
+    await this.click(this.page.getByRole('link', { name: locators.Products.viewCartLinkText }));
   }
 
   async continueShopping(): Promise<void> {
-    await this.click(this.continueShoppingButton());
+    await this.click(this.page.getByRole('button', { name: locators.Products.continueShoppingText }));
   }
 }
