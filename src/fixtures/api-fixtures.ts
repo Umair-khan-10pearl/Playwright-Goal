@@ -2,7 +2,7 @@ import { test as base, request, type APIRequestContext } from '@playwright/test'
 import { AccountApi } from '../api/AccountApi';
 import { AuthApi } from '../api/AuthApi';
 import { ProductApi } from '../api/ProductApi';
-import { ENV } from '../config/env';
+import { ENV } from '../config/Env';
 
 export interface ApiFixtures {
   apiRequestContext: APIRequestContext;

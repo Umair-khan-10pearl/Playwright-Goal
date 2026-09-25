@@ -1,5 +1,5 @@
 import type { APIRequestContext, APIResponse } from '@playwright/test';
-import { logApiRequest, logApiResponse } from '../../utils/logger';
+import { logApiRequest, logApiResponse } from '../utils/logger';
 
 /** API 7-10: verify login with/without required parameters. */
 export class AuthApi {

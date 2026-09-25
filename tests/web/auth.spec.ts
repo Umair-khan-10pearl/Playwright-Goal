@@ -1,5 +1,5 @@
 import { test, expect } from '../../src/fixtures/test-fixtures';
-import { ENV } from '../../src/config/env';
+import { ENV } from '../../src/config/Env';
 import { buildRegisterUserPayload } from '../../src/utils/test-data';
 
 test.describe('Authentication - Login', () => {

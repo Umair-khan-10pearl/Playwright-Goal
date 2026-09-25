@@ -1,6 +1,6 @@
 import winston from 'winston';
 import type { APIResponse } from '@playwright/test';
-import { ENV } from '../config/env';
+import { ENV } from '../config/Env';
 
 const SENSITIVE_KEYS = ['password', 'token', 'authorization', 'secret'];
 
