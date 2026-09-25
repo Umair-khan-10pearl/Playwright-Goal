@@ -6,17 +6,12 @@ test.describe('@web @negative Error boundary & negative handling', () => {
     await loginPage.goto();
     await loginPage.login('not-a-real-user@example.test', 'WrongPassword123!');
 
-    await expect(loginPage.isLoginErrorVisible()).toBe(true);
+    await expect(await loginPage.isLoginErrorVisible()).toBe(true);
     // The page shell must still be intact - no white-screen crash.
     await expect(page.getByRole('link', { name: 'Signup / Login' })).toBeVisible();
   });
 
-  test('blocks signup with an email that is already registered', async ({
-    loginPage,
-    signupPage,
-    headerComponent,
-    accountApi,
-  }) => {
+  test('blocks signup with an email that is already registered', async ({loginPage,signupPage,headerComponent,accountApi,}) => {
     const user = buildRegisterUserPayload();
 
     await loginPage.goto();
@@ -31,7 +26,7 @@ test.describe('@web @negative Error boundary & negative handling', () => {
     await loginPage.goto();
     await loginPage.startSignup(user.name, user.email);
 
-    await expect(loginPage.isSignupErrorVisible()).toBe(true);
+    await expect(await loginPage.isSignupErrorVisible()).toBe(true);
 
     await accountApi.deleteAccount(user.email, user.password);
   });
