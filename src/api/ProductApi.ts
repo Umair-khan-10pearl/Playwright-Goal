@@ -1,5 +1,5 @@
 import type { APIRequestContext, APIResponse } from '@playwright/test';
-import { logApiRequest, logApiResponse } from '../../utils/logger';
+import { logApiRequest, logApiResponse } from '../utils/logger';
 
 /** API 1-6: products/brands listing and product search. */
 export class ProductApi {
